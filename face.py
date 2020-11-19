@@ -1,13 +1,9 @@
 import cv2
 import sys
-
-
 # Create the haar cascade
-face_cascade = cv2.CascadeClassifier(r'C:\Users\nezac\Desktop\DAB\Sem3\ML\Project\haarcascade_frontalface_default.xml')
-img = cv2.imread(r'C:\Users\nezac\Desktop\DAB\Sem3\ML\Project\abba.jpg')
-
-#img = cv2.imread(r)
-#plt.imshow(img)
+face_cascade = cv2.CascadeClassifier(r'Yourpath\haarcascade_frontalface_default.xml')
+#Read Image
+img = cv2.imread(r'YourImagePath')
 # Convert into grayscale
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 # Detect faces
