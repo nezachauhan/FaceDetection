@@ -1,0 +1,20 @@
+import cv2
+import sys
+
+
+# Create the haar cascade
+face_cascade = cv2.CascadeClassifier(r'C:\Users\nezac\Desktop\DAB\Sem3\ML\Project\haarcascade_frontalface_default.xml')
+img = cv2.imread(r'C:\Users\nezac\Desktop\DAB\Sem3\ML\Project\abba.jpg')
+
+#img = cv2.imread(r)
+#plt.imshow(img)
+# Convert into grayscale
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+# Detect faces
+faces = face_cascade.detectMultiScale(gray, 1.1, 4)
+# Draw rectangle around the faces
+for (x, y, w, h) in faces:
+    cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
+# Display the output
+cv2.imshow('img', img)
+cv2.waitKey()
